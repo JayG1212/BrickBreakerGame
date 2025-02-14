@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    [SerializeField] protected List<BreakableBrick> bricks;
+  //  [SerializeField] protected List<BreakableBrick> bricks;
     [SerializeField] protected GameObject canvasItem;
     // Methods
+
+    private void Update()
+    {
+        
+    }
     private void Awake()
     {
         GameObject[] gOs = GameObject.FindObjectsOfType<GameObject>();
@@ -18,16 +23,13 @@ public class RoundManager : MonoBehaviour
     }
     public void RemoveBrick(BreakableBrick brick)
     {
-        if(bricks.Count > 0)
-        {
-            bricks.Remove(brick);
-        }
+    
         EndRound();
     }
 
     protected void EndRound()
     {
-        if(bricks.Count <= 0)
+        if(FindObjectsOfType<BreakableBrick>().Length <= 0)
         {
             canvasItem.SetActive(true);
         }
