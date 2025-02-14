@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     Rigidbody rb;
     [SerializeField] protected float worldVelocity = 25;
     [SerializeField] protected Vector3 startForce = Vector3.one;
-
+    [SerializeField] protected int damage = 1;
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,7 +33,15 @@ public class Ball : MonoBehaviour
 
         nv3.x = Mathf.Clamp(hv3.x, -worldVelocity, worldVelocity);
         nv3.y = Mathf.Clamp(hv3.y, -worldVelocity, worldVelocity);
-        nv3.z = 0;
+        nv3.z = Mathf.Clamp(hv3.z, -worldVelocity, worldVelocity);
         rb.velocity = nv3;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+       BreakableBrick brick = collision.gameObject.GetComponent<BreakableBrick>();
+        if(brick != null)
+        {
+            brick.Break(damage);
+        }
     }
 }

@@ -10,6 +10,18 @@ public class GameManager : MonoBehaviour
     // Variables
     private static GameManager instance;
     private float playerScore = 0.0f;
+
+
+
+    // Methods
+
+    public void ResetScore()
+    {
+        playerScore = 0;
+    }
+
+
+
     public static GameManager Instance
     {
         get 
