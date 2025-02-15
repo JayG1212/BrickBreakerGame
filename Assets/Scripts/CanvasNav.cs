@@ -7,13 +7,14 @@ public class CanvasNav : MonoBehaviour
 {
     [SerializeField]
 
-    public void LoadNextScene(int anIDX)
+    public void LoadNextScene()
     {
-        SceneManager.LoadScene(anIDX);
+        GameManager.Instance.NextScene();
     }
 
     public void LoadStartScene()
     {
-        LoadNextScene(0); 
+        GameManager.Instance.StartScene();
+
     }
 }

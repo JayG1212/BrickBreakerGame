@@ -21,15 +21,10 @@ public class RoundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void RemoveBrick(BreakableBrick brick)
-    {
-    
-        EndRound();
-    }
 
     protected void EndRound()
     {
-        if(FindObjectsOfType<BreakableBrick>().Length <= 0)
+        if(FindObjectsOfType<BreakableBrick>().Length < 1)
         {
             canvasItem.SetActive(true);
         }

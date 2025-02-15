@@ -6,6 +6,7 @@ using UnityEngine;
 public class BreakableBrick : MonoBehaviour
 {
     [SerializeField, Range(1, 20)] protected int hitsToBreak;
+    [SerializeField, Range(1, 20)] protected int pointValue;
     protected int curHitsToBreak = 0;
 
     private void Awake()
@@ -16,7 +17,7 @@ public class BreakableBrick : MonoBehaviour
     {
         curHitsToBreak -= aDamage;
 
-        if(curHitsToBreak < 0)
+        if(curHitsToBreak <= 0)
         {
             BreakBrick();
         }
@@ -24,7 +25,7 @@ public class BreakableBrick : MonoBehaviour
 
     protected void BreakBrick()
     {
+        GameManager.Instance.AddScore(pointValue);
         Destroy(gameObject);
-        FindObjectOfType<RoundManager>().RemoveBrick(this);
     }
 }
