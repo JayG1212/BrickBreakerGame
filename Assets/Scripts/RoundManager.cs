@@ -10,11 +10,11 @@ public class RoundManager : MonoBehaviour
 
     private void Update()
     {
-        
+        EndRound();
     }
     private void Awake()
     {
-        GameObject[] gOs = GameObject.FindObjectsOfType<GameObject>();
+        RoundManager[] gOs = FindObjectsOfType<RoundManager>();
 
         if(gOs.Length > 1)
         {

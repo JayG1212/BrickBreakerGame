@@ -49,7 +49,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+             SceneManager.LoadScene(nextScene);
 
+        }
+        if(nextScene == 1)
+        {
+            ResetScore();
         }
     }
    
@@ -69,6 +74,7 @@ public class GameManager : MonoBehaviour
                 return instance;
             
         }
-        set { instance = value; }
+      
     }
+    
 }

@@ -9,12 +9,16 @@ public class BreakableBrick : MonoBehaviour
     [SerializeField, Range(1, 20)] protected int pointValue;
     protected int curHitsToBreak = 0;
 
+
+    [SerializeField] ParticleSystem HitpsPrefab;
+
     private void Awake()
     {
         curHitsToBreak = hitsToBreak;
     }
     public void Break(int aDamage)
     {
+        HitpsPrefab.Play();
         curHitsToBreak -= aDamage;
 
         if(curHitsToBreak <= 0)
@@ -26,6 +30,8 @@ public class BreakableBrick : MonoBehaviour
     protected void BreakBrick()
     {
         GameManager.Instance.AddScore(pointValue);
+       // Instantiate(HitpsPrefab).GetComponent<ParticleSystem>().Play();
         Destroy(gameObject);
+
     }
 }

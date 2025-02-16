@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 2732423488931887329}
   - component: {fileID: 4398550959513258348}
   - component: {fileID: 5112697855969729321}
+  - component: {fileID: 5112697855969729322}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -969,6 +970,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5112697855969729322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957449393254709549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825beb96a12272a469f65c8e9340df8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 5112697855969729321}
+  preText: 'Score: '
+  postText: ' points'
 --- !u!224 &6904350117318055083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1102,6 +1118,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2431897205265532656, guid: d2efb50e45d988d4da46032d7ee927f0, type: 3}
+      propertyPath: pointValue
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2431897205265532656, guid: d2efb50e45d988d4da46032d7ee927f0, type: 3}
       propertyPath: hitsToBreak
       value: 10
